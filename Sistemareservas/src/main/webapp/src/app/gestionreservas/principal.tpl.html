@@ -1,0 +1,25 @@
+<div style="background-color: #F7FE2E;border-color: #000000">
+	<!-- Seccion donde Se insrtará el formulario de ingreso o edición -->
+	<div id="errores">
+		<ul ng-repeat="error in errores">
+			<li ng-repeat="mensaje in error.mensajes" >
+				{{mensaje}}
+			</li>
+		</ul>	
+	</div>
+	
+	<div ui-view style="padding: 5px">
+		<!-- Boton eue carga el formulario de creación -->
+	   <a ui-sref="gestionreservas.nuevo">Agregar</a>
+	</div>
+	<!-- Seccion que muestra el listado -->
+	<div> Seccion Listado 
+		<ul>
+			<li ng-repeat="reserva in listado "  >
+			Sala:{{reserva.sala.nombre }}  , fechaInicio : {{reserva.fechaInicio | date : 'dd/MM/yyyy' }}, FechaFin : {{reserva.fechaFin | date : 'dd/MM/yyyy'}}
+			<a ui-sref="gestionreservas.editar({id : reserva.id})">Editar</a>
+			<a href="#" ng-click="deleteReserva(reserva)" >eliminar</a> 
+			</li>
+		</ul>	
+	</div>
+</div>	

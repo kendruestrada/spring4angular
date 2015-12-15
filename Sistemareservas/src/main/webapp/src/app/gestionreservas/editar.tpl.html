@@ -1,0 +1,16 @@
+<div style="background-color: #58FA58;border-color: #000000">
+<form name="myform"  novalidate>
+	<div> Formulario Edicion </div>
+	<label for="fechaInicio">Fecha Inicio</label>
+	<input name="fechaInicio"   type="datetime-local" ng-model="formEditar.fechaInicio"> 
+	<label for="fechaFin">Fecha Fin</label>
+	<input name="fechaFin" type="datetime-local" ng-model="formEditar.fechaFin"> 
+	<label for="idSala">Sala</label>
+	<select ng-model="formEditar.sala.id" ng-options="item.id as item.nombre for item in salas">
+    <option value="">Seleccione Una Sala</option>
+	</select>	
+	
+	<button ng-click="editReserva(formEditar)">Modificar</button>	
+	<button onclick=" window.history.back()">Atras</button>
+</form>	
+</div>	
